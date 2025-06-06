@@ -1,0 +1,18 @@
+---
+import Layout from '../layouts/Layout.astro';
+import BlogCard from '../components/BlogCard.astro';
+const pageTitle = "My Blog!❤️";
+---
+
+<Layout pageTitle={pageTitle}>
+  <p>
+    For a long time, I’ve yearned for a space to share the thoughts that dance through my mind —
+    whether it’s pondering the meaning of life or questioning why hot food feels like a hug.
+    This blog is my attempt to blur the lines between the personal, academic, and professional.
+    Welcome to a little corner of myself. 🌸
+  </p>
+
+  <BlogCard blogPath="/posts/here-i-am" blogTitle="Here I Am">
+    <p>The first post in this space — an introduction, a reflection, a beginning.</p>
+  </BlogCard>
+</Layout>

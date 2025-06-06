@@ -1,11 +1,43 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
+const pageTitle = "Luisa (Ellie) Escobar-Robledo";
+const latestResearch = [
+  { title: 'Cardiac Organoids for Drug Screening', link: '/research/publications' },
+  { title: 'Fluorescence-Based ECG: A New Frontier', link: '/research/publications' },
+];
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const latestPosts = [
+  { title: 'How I Built My Personal Website with Astro', link: '/blog/how-i-built-this' },
+  { title: 'Adventures in Cardiac Electrophysiology', link: '/blog/cardio-adventures' },
+];
 ---
 
-<Layout>
-	<Welcome />
+<Layout pageTitle={pageTitle}>
+    <section style="display: flex; align-items: center; gap: 2rem; margin-bottom: 3rem;">
+        <img src="/images/Headshot.jpg" alt="Ellie Escobar-Robledo headshot" width="200" style="border-radius: 12px;" />
+        <div>
+            <h1>Hi, I'm Ellie 🌸</h1>
+            <p>Welcome to my little corner of the internet. I'm a physician-scientist building tools to explore the heart, blending data science, medicine, and computational biology.</p>
+        </div>
+    </section>
+
+    <section style="display: flex; gap: 2rem; flex-wrap: wrap;">
+        <div style="flex: 1; background-color: var(--primary); padding: 1rem; border-radius: 12px;">
+            <h2>🔬 Latest Research</h2>
+            <ul>
+            {latestResearch.map(item => (
+                <li><a href={item.link}>{item.title}</a></li>
+            ))}
+            </ul>
+        </div>
+
+        <div style="flex: 1; background-color: var(--highlight); padding: 1rem; border-radius: 12px;">
+            <h2>📝 Latest Posts</h2>
+            <ul>
+            {latestPosts.map(post => (
+                <li><a href={post.link}>{post.title}</a></li>
+            ))}
+            </ul>
+        </div>
+    </section>
 </Layout>

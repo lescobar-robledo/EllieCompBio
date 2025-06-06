@@ -1,0 +1,116 @@
+:root {
+  --background: #E8F0FF; /* Alice blue */
+  --text: #071013;
+  --primary: #7A5C61;        /* Rose taupe */
+  --accent: #6874E8;      /* Medium slate blue */
+  --highlight: #7A5C61;   /* Roes taupe */
+  --link: #F7ACCF;     /* Lavender pink */
+  --header-font: 'Georgia', serif;
+  --body-font: 'Inter', sans-serif;
+}
+  
+body {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 80ch;
+    padding: 1rem;
+    line-height: 1.5;
+    background-color: var(--background);
+    color: var(--text);
+    font-family: var(--body-font);
+    line-height: 1.6;
+    padding: 2rem;
+    text-align: justify;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+/* Headings */
+h1, h2, h3 {
+  font-family: var(--header-font);
+  color: var(--accent);
+  margin-bottom: 1rem;
+}
+  
+  /* nav styles */
+
+.hamburger {
+    padding-right: 20px;
+    cursor: pointer;
+  }
+  
+.hamburger .line {
+    display: block;
+    width: 40px;
+    height: 5px;
+    margin-bottom: 10px;
+    background-color: #000000;
+  }
+
+/* Links */
+a {
+  color: var(--link);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+/* Nav */
+nav {
+  background: var(--primary);
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+}
+
+.nav-links {
+    width: 100%;
+    top: 5rem;
+    left: 48px;
+    background-color: #000000;
+    display: none;
+    margin: 0;
+  }
+  
+.nav-links a {
+    display: block;
+    text-align: center;
+    padding: 10px 0;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+.nav-links a:hover, a:focus {
+    background-color: var(--accent);
+    border: 2px solid var(--primary);
+    border-radius: 16px;
+    transition: background-color 0.3s ease, border-radius 0.3s ease;
+  }
+  
+.expanded {
+    display: unset;
+  }
+  
+@media screen and (min-width: 636px) {
+    .nav-links {
+      margin-left: 5em;
+      display: block;
+      position: static;
+      width: auto;
+      background: none;
+    }
+  
+    .nav-links a {
+      display: inline-block;
+      padding: 15px 20px;
+    }
+  
+    .hamburger {
+      display: none;
+    }
+  }
