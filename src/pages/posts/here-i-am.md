@@ -6,7 +6,6 @@ description: "A personal reflection on identity, self-doubt, and the quiet power
 pubDate: "2025-06-06T00:00:00-04:00"
 author: "Ellie Escobar-Robledo"
 tags: ["reflection", "personal", "identity", "vulnerability"]
-image: "/images/ellie-headshot.jpg"
 draft: false
 ---
 
@@ -31,7 +30,3 @@ I want to get away from this feeling—and the best way I know how is to pretend
 Me, Ellie. Just a human. Just a trans girl. Just me, trying my best to live. I fight my biggest enemy—myself—pushing to recognize that I’m not perfect, that I have a ton of flaws. I overcommit. I underdeliver. I’m way too hard on myself. And yes—it’s me who gets in my own way. But I know I’m not alone in this. If I shared this, I’m sure many would resonate with these feelings, would recognize that being your own obstacle is part of being self-aware. Part of striving to be better. Of trying to belong in a society I want to be part of—even when the fear of not belonging turns into a self-fulfilling prophecy that pushes me further away.
 
 I need to remind myself: crying to a friend doesn’t mean I can’t be there for them later. Being sick doesn’t disqualify me from helping others feel better. Being vulnerable doesn’t mean I don’t deserve to be sitting here. Because the truth is: here I am. And here I’ll stay—for as long as I need to.
-
-
-
-
