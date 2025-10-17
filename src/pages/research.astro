@@ -1,8 +1,100 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { publications, bookChapters } from '../data/publications';
 const pageTitle = "My Research";
+const sortedArticles = [...publications].sort((a, b) => b.year - a.year);
+const sortedBookChapters = [...bookChapters].sort((a, b) => b.year - a.year);
 ---
 
 <Layout pageTitle={pageTitle}>
+  <section class="hero-section about-hero">
+    <div class="hero-copy">
+      <h2 class="hero-greeting">Signals, Stories, and the Heart</h2>
+      <p>Below is a living log of the projects and collaborations I’ve been fortunate to contribute to. I keep the latest work at the top so it’s easy to scan or update.</p>
+    </div>
+  </section>
 
+  <section class="research-stack">
+    <article class="about-card about-card--blue research-card">
+      <header class="about-card__header">
+        <h3>Articles</h3>
+      </header>
+      <div class="about-card__body">
+        <ul class="publication-list">
+          {sortedArticles.map((publication) => {
+            const detailText = [
+              publication.volume && `Vol ${publication.volume}`,
+              publication.issue && `No. ${publication.issue}`,
+              publication.pages
+            ]
+              .filter(Boolean)
+              .join(' · ');
+
+            return (
+              <li class="publication-entry">
+                <span class="publication-year">{publication.year}</span>
+                <div class="publication-meta">
+                  <h3 class="publication-title">
+                    {publication.link ? (
+                      <a href={publication.link} target="_blank" rel="noopener noreferrer">
+                        {publication.title}
+                      </a>
+                    ) : (
+                      publication.title
+                    )}
+                  </h3>
+                  <p class="publication-authors" set:html={publication.authors}></p>
+                  <p class="publication-venue">
+                    <span class="publication-venue-name">{publication.venue}</span>
+                    {detailText && <span class="publication-venue-details">{detailText}</span>}
+                  </p>
+                </div>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
+    </article>
+
+    <article class="about-card about-card--pink research-card">
+      <header class="about-card__header">
+        <h3>Book Chapters</h3>
+      </header>
+      <div class="about-card__body">
+        <ul class="publication-list">
+          {sortedBookChapters.map((publication) => {
+            const detailText = [
+              publication.volume && `Vol ${publication.volume}`,
+              publication.issue && `No. ${publication.issue}`,
+              publication.pages
+            ]
+              .filter(Boolean)
+              .join(' · ');
+
+            return (
+              <li class="publication-entry">
+                <span class="publication-year">{publication.year}</span>
+                <div class="publication-meta">
+                  <h3 class="publication-title">
+                    {publication.link ? (
+                      <a href={publication.link} target="_blank" rel="noopener noreferrer">
+                        {publication.title}
+                      </a>
+                    ) : (
+                      publication.title
+                    )}
+                  </h3>
+                  <p class="publication-authors" set:html={publication.authors}></p>
+                  <p class="publication-venue">
+                    <span class="publication-venue-name">{publication.venue}</span>
+                    {detailText && <span class="publication-venue-details">{detailText}</span>}
+                  </p>
+                </div>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
+    </article>
+  </section>
 </Layout>

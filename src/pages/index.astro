@@ -2,27 +2,26 @@
 import Layout from '../layouts/Layout.astro';
 const pageTitle = "Luisa (Ellie) Escobar-Robledo";
 const latestResearch = [
-  { title: 'Cardiac Organoids for Drug Screening', link: '/research/publications' },
-  { title: 'Fluorescence-Based ECG: A New Frontier', link: '/research/publications' },
+  { title: 'TBD', link: '/research/publications' },
 ];
 
 const latestPosts = [
-  { title: 'How I Built My Personal Website with Astro', link: '/blog/how-i-built-this' },
-  { title: 'Adventures in Cardiac Electrophysiology', link: '/blog/cardio-adventures' },
+  { title: 'Para ti que me conociste de antes', link: '/blog/conociste_de_antes' },
+  { title: 'Here I am', link: '/blog/here-i-am' },
 ];
 ---
 
 <Layout pageTitle={pageTitle}>
-    <section style="display: flex; align-items: center; gap: 2rem; margin-bottom: 3rem;">
-        <img src="/EllieCompBio/images/Headshot.jpg" alt="Ellie Escobar-Robledo headshot" width="200" style="border-radius: 12px;" />
-        <div>
-            <h1>Hi, I'm Ellie 🌸</h1>
+    <section class="hero-section">
+        <img class="hero-portrait" src="/EllieCompBio/images/WebsiteHeadshot.jpg" alt="Ellie Escobar-Robledo headshot" width="200" />
+        <div class="hero-copy">
+            <h1 class="hero-greeting">Hi, I'm Ellie 🌸</h1>
             <p>Welcome to my little corner of the internet. I'm a physician-scientist building tools to explore the heart, blending data science, medicine, and computational biology.</p>
         </div>
     </section>
 
-    <section style="display: flex; gap: 2rem; flex-wrap: wrap;">
-        <div style="flex: 1; background-color: var(--primary); padding: 1rem; border-radius: 12px;">
+    <section class="marker-grid">
+        <div class="marker-card marker-blue">
             <h2>🔬 Latest Research</h2>
             <ul>
             {latestResearch.map(item => (
@@ -31,7 +30,7 @@ const latestPosts = [
             </ul>
         </div>
 
-        <div style="flex: 1; background-color: var(--highlight); padding: 1rem; border-radius: 12px;">
+        <div class="marker-card marker-pink">
             <h2>📝 Latest Posts</h2>
             <ul>
             {latestPosts.map(post => (

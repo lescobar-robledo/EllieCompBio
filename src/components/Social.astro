@@ -1,13 +1,37 @@
 ---
 const { platform, username } = Astro.props;
----
-<a href={`https://www.${platform}.com/${username}`}>{platform}</a>
 
-<style>
-  a {
-    padding: 0.5rem 1rem;
-    color: white;
-    background-color: #000000;
-    text-decoration: none;
+const socials: Record<
+  string,
+  {
+    url: string;
+    label: string;
+    display: string;
+    className: string;
   }
-</style>
+> = {
+  github: {
+    url: `https://github.com/${username}`,
+    label: `Visit ${username}'s GitHub`,
+    display: 'GitHub',
+    className: 'footer-bookmark--github'
+  },
+  bluesky: {
+    url: `https://bsky.app/profile/${username}`,
+    label: `Visit ${username} on Bluesky`,
+    display: 'Bluesky',
+    className: 'footer-bookmark--bluesky'
+  }
+};
+
+const social = socials[platform] ?? socials.github;
+---
+<a
+  class={`bookmark-link footer-bookmark ${social.className ?? ''}`}
+  href={social.url}
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label={social.label}
+>
+  <span class="footer-bookmark__label">{social.display}</span>
+</a>

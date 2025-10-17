@@ -2,6 +2,13 @@
 import Layout from '../layouts/Layout.astro';
 import BlogCard from '../components/BlogCard.astro';
 const pageTitle = "My Blog!❤️";
+const basePath = '/EllieCompBio';
+const posts = (await Astro.glob('./posts/*.md'))
+  .filter(({ frontmatter }) => !frontmatter.draft)
+  .sort(
+    (a, b) =>
+      new Date(b.frontmatter.pubDate).getTime() - new Date(a.frontmatter.pubDate).getTime()
+  );
 ---
 
 <Layout pageTitle={pageTitle}>
@@ -12,7 +19,13 @@ const pageTitle = "My Blog!❤️";
     Welcome to a little corner of myself. 🌸
   </p>
 
-  <BlogCard blogPath="/EllieCompBio/posts/here-i-am" blogTitle="Here I Am">
-    <p>The first post in this space — an introduction, a reflection, a beginning.</p>
-  </BlogCard>
+  {posts.map((post) => (
+    <BlogCard
+      blogPath={`${basePath}${post.url}`.replace(/\/$/, '')}
+      blogTitle={post.frontmatter.title}
+      date={post.frontmatter.pubDate}
+    >
+      <p>{post.frontmatter.description}</p>
+    </BlogCard>
+  ))}
 </Layout>

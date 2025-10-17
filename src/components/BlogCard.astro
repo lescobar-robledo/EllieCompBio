@@ -1,10 +1,31 @@
 ---
-const { blogPath, blogTitle } = Astro.props;
+const { blogPath, blogTitle, date, tags = [] } = Astro.props;
+const formattedDate = date
+  ? new Date(date).toLocaleDateString('en-US', {
+      month: 'short',
+      day: 'numeric',
+      year: 'numeric'
+    })
+  : null;
+const isoDate = date ? new Date(date).toISOString() : null;
 ---
-
-<section style="margin-top: 2rem;">
-  <article style="margin-bottom: 2rem; padding: 1rem; border-radius: 12px; border: 2px solid var(--highlight); background: transparent;">
-    <h2><a href={blogPath}>{blogTitle}</a></h2>
+<section class="card-section">
+  <article class="marker-card marker-lilac">
+    <header class="card-header">
+      <h2><a href={blogPath}>{blogTitle}</a></h2>
+      {formattedDate && (
+        <time class="card-date" datetime={isoDate ?? undefined}>
+          {formattedDate}
+        </time>
+      )}
+    </header>
+    {tags.length > 0 && (
+      <ul class="tag-list" aria-label="Post tags">
+        {tags.map((tag) => (
+          <li class="tag-pill">{tag}</li>
+        ))}
+      </ul>
+    )}
     <slot />
   </article>
 </section>
