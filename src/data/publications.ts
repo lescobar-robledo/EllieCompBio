@@ -13,7 +13,7 @@ export const publications: Publication[] = [
   {
     year: 2021,
     title: 'Atypical advanced interatrial block due to giant atrial lipoma',
-    authors: 'Gentille-Lorente, D. I., Scott L.,<strong>Escobar-Robledo, L. A.</strong>, et al.',
+    authors: 'Gentille-Lorente, D. I., Scott L.,<strong>Escobar-Robledo, L. A.</strong>, Mesa, M. M. A., Carreras, C. F., Baranchuk, A., Martínez, S. M., Elosua, R., Bayés, G. A., & Bayés, de‐Luna, A. ',
     venue: 'Pacing and Clinical Electrophysiology (PACE)',
     volume: '44',
     issue: '4',
@@ -23,7 +23,7 @@ export const publications: Publication[] = [
   {
     year: 2021,
     title: 'ECG patterns of typical and atypical advanced interatrial block: prevalence and clinical relevance',
-    authors: 'Elosua, R., <strong>Escobar-Robledo, L. A.</strong>, et al.',
+    authors: 'Elosua, R., <strong>Escobar-Robledo, L. A.</strong>, Massó-van Roessel A, Martínez-Sellés M, Baranchuk A, Bayés-de-Luna A.',
     venue: 'Revista Española de Cardiología (English Edition)',
     volume: '74',
     issue: '9',
@@ -38,20 +38,22 @@ export const publications: Publication[] = [
     venue: 'Blood Pressure Monitoring',
     volume: '26',
     issue: '6',
-    pages: '426–434'
+    pages: '426–434',
+    link: 'https://journals.lww.com/bpmonitoring/fulltext/2021/12000/A_novel_method_for_the_noninvasive_estimation_of.5.aspx'
   },
   {
     year: 2020,
     title: 'Advanced interatrial block: A predictor of covert atrial fibrillation in embolic stroke of undetermined source',
-    authors: 'Mendieta, G., <strong>Escobar-Robledo, L. A.</strong>, et al.',
+    authors: 'Mendieta, G., Guasch, E., Weir, D., Aristizabal, D., <strong>Escobar‐Robledo, L. A.</strong>, Llull, L., Mont, L., Bayés de Luna, A., Sitges, M.',
     venue: 'Journal of Electrocardiology',
     volume: '58',
-    pages: '113–118'
+    pages: '113–118',
+    link: 'https://doi.org/10.1016/j.jelectrocard.2019.11.050'
   },
   {
     year: 2020,
     title: 'Baseline ECG and prognosis after transcatheter aortic valve implantation: the role of interatrial block',
-    authors: 'Vicent, L., <strong>Escobar-Robledo, L. A.</strong>, et al.',
+    authors: 'Vicent, L., Fernández‐Cordón, C., Nombela‐Franco, L., <strong>Escobar‐Robledo, L. A.</strong>, Ayesta, A., Ariza Solé, A., Gómez‐Doblas, J. J., Bernal, E., Tirado‐Conte, G., Cobiella, J., González‐Saldivar, H., López‐Otero, D., Díez‐Villanueva, P., Sarnago, F., Armario, X., Bayés‐de‐Luna, A., Martínez‐Sellés, M., Fadeuilhe Grau, E., Serra, A., Arzamendi, D., Millán, X., Díez‐delHoyo, F., Grigorian, L., Juárez, M., Vázquez, M. E., Sanz, R., Gutiérrez, E., Elízaga, J., Fernández‐Avilés, F., Alvarado Casas, T., Alfonso, F., Albarrán González de Trevilla, A., García Tejada, J., Gómez Blázquez, I. T., Sarnago, F., Guerrero Morales, C., Avanzas, P., Persia, Y., Moris, C., Cobiella, J., Sanmartin Pena, X. C., Lopez Pais, J., Muñoz, A., Muñoz, E., & Hernández, J. M.',
     venue: 'Journal of the American Heart Association',
     volume: '9',
     issue: '22',
@@ -62,7 +64,7 @@ export const publications: Publication[] = [
     year: 2019,
     title:
       'Old teaching tools should not be forgotten: The value of the Lewis ladder diagram in understanding bigeminal rhythms',
-    authors: 'Antiperovitch, P., <strong>Escobar-Robledo, L. A.</strong>, et al.',
+    authors: 'Antiperovitch, P., Bayés de Luna, A., Nunes de Alencar, J., García-Niebla, J., <strong>Escobar-Robledo, L. A.</strong>, Restrepo, D. W., Aristizabal, D., Massó van Roessel, A., Bayés-Genís, A., & Baranchuk, A.',
     venue: 'Annals of Noninvasive Electrocardiology',
     volume: '24',
     issue: '5',
@@ -73,7 +75,7 @@ export const publications: Publication[] = [
     year: 2019,
     title:
       'Rationale and design of the Baseline Interatrial Block and Transcatheter Aortic Valve Implantation (BIT) registry',
-    authors: 'Martínez-Sellés, M., <strong>Escobar-Robledo, L. A.</strong>, et al.',
+    authors: 'Martínez-Sellés, M., <strong>Escobar-Robledo, L. A.</strong>, Bernal, E., Nombela, L., Ayesta, A., Gómez-Doblas, J. J., López-Otero, D., González-Saldivar, H., Fernández-Cordón, C., Bayés-de-Luna, A., & Ariza-Solé, A.',
     venue: 'Journal of Electrocardiology',
     volume: '57',
     pages: '100–103',

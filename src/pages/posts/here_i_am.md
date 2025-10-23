@@ -1,7 +1,7 @@
 ---
 layout: ../../layouts/PostLayout.astro
 title: "Here I Am"
-slug: "here-i-am"
+slug: "here_i_am"
 description: "A personal reflection on identity, self-doubt, and the quiet power of simply being present."
 pubDate: "2025-06-06T00:00:00-04:00"
 author: "Ellie Escobar-Robledo"
