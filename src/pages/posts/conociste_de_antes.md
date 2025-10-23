@@ -1,7 +1,7 @@
 ---
 layout: ../../layouts/PostLayout.astro
 title: "Para ti que me conociste de antes"
-slug: "para-ti-que-me-conociste-de-antes"
+slug: "conociste_de_antes"
 description: "Una carta personal sobre identidad, miedo y el renacer desde la verdad de ser una misma."
 pubDate: "2025-10-17T00:00:00-04:00"
 author: "Luisa (Ellie) Escobar-Robledo"

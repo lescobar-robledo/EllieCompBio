@@ -598,6 +598,28 @@ h3 {
   }
 }
 
+.blog-page-intro {
+  text-align: justify;
+}
+
+.blog-post-card {
+  text-align: justify;
+}
+
+.post-meta {
+  margin: 0 0 clamp(1.2rem, 3vw, 1.8rem);
+  font-size: 0.95rem;
+  color: var(--ink-muted);
+}
+
+.post-body p {
+  text-align: justify;
+}
+
+.post-body p + p {
+  margin-top: 1.1rem;
+}
+
 @media (max-width: 640px) {
   .publication-entry {
     grid-template-columns: 1fr;

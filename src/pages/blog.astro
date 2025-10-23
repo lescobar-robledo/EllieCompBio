@@ -2,17 +2,21 @@
 import Layout from '../layouts/Layout.astro';
 import BlogCard from '../components/BlogCard.astro';
 const pageTitle = "My Blog!❤️";
-const basePath = '/EllieCompBio';
 const posts = (await Astro.glob('./posts/*.md'))
   .filter(({ frontmatter }) => !frontmatter.draft)
+  .map((post) => ({
+    title: post.frontmatter.title,
+    description: post.frontmatter.description,
+    pubDate: post.frontmatter.pubDate,
+    href: post.url,
+  }))
   .sort(
-    (a, b) =>
-      new Date(b.frontmatter.pubDate).getTime() - new Date(a.frontmatter.pubDate).getTime()
+    (a, b) => new Date(b.pubDate).getTime() - new Date(a.pubDate).getTime()
   );
 ---
 
 <Layout pageTitle={pageTitle}>
-  <p>
+  <p class="blog-page-intro">
     For a long time, I’ve yearned for a space to share the thoughts that dance through my mind —
     whether it’s pondering the meaning of life or questioning why hot food feels like a hug.
     This blog is my attempt to blur the lines between the personal, academic, and professional.
@@ -21,11 +25,11 @@ const posts = (await Astro.glob('./posts/*.md'))
 
   {posts.map((post) => (
     <BlogCard
-      blogPath={`${basePath}${post.url}`.replace(/\/$/, '')}
-      blogTitle={post.frontmatter.title}
-      date={post.frontmatter.pubDate}
+      blogPath={post.href}
+      blogTitle={post.title}
+      date={post.pubDate}
     >
-      <p>{post.frontmatter.description}</p>
+      <p class="blog-post-card">{post.description}</p>
     </BlogCard>
   ))}
 </Layout>

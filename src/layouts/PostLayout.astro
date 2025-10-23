@@ -3,12 +3,16 @@ import Layout from '../layouts/Layout.astro';
 const { frontmatter } = Astro.props;
 ---
 <Layout pageTitle={frontmatter.title}>
-    <p>Written by {frontmatter.author}<br />
-    <i>{new Date(frontmatter.pubDate).toLocaleDateString('en-US', {
+    <p class="post-meta">
+      Written by {frontmatter.author}<br />
+      <i>{new Date(frontmatter.pubDate).toLocaleDateString('en-US', {
         weekday: 'short',
         month: 'short',
         day: '2-digit',
         year: 'numeric'
-      }).replace(',', '')}</i></p>
-    <slot />
+      }).replace(',', '')}</i>
+    </p>
+    <div class="post-body">
+      <slot />
+    </div>
 </Layout>
