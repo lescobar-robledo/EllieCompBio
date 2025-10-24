@@ -1,14 +1,37 @@
 ---
 import Layout from '../layouts/Layout.astro';
-const pageTitle = "Luisa (Ellie) Escobar-Robledo";
-const latestResearch = [
-  { title: 'TBD', link: '/research/publications' },
-];
+import { publications } from '../data/publications';
 
-const latestPosts = [
-  { title: 'Para ti que me conociste de antes', link: '/blog/conociste_de_antes' },
-  { title: 'Here I am', link: '/blog/here-i-am' },
-];
+const pageTitle = "Luisa (Ellie) Escobar-Robledo";
+const currentYear = new Date().getFullYear();
+const recentPublications = publications
+  .filter((pub) => pub.year >= currentYear - 3)
+  .sort((a, b) => b.year - a.year)
+  .slice(0, 2);
+
+const latestResearch = recentPublications.map((pub) => ({
+  title: pub.title,
+  link: pub.link ?? '/research',
+}));
+
+const researchIsBrewing = latestResearch.length === 0;
+
+const postEntries = (await Astro.glob('./posts/*.md'))
+  .filter(({ frontmatter }) => !frontmatter.draft)
+  .map((post) => ({
+    title: post.frontmatter.title,
+    href: post.url,
+    pubDate: post.frontmatter.pubDate,
+  }))
+  .sort(
+    (a, b) => new Date(b.pubDate).getTime() - new Date(a.pubDate).getTime()
+  )
+  .slice(0, 2);
+
+const latestPosts = postEntries.map((post) => ({
+  title: post.title,
+  link: post.href,
+}));
 ---
 
 <Layout pageTitle={pageTitle}>
@@ -31,24 +54,32 @@ const latestPosts = [
   <section class="marker-grid">
     <div class="marker-card marker-blue">
       <h2>🔬 Latest Research</h2>
-      <ul>
-        {latestResearch.map((item) => (
-          <li>
-            <a href={item.link}>{item.title}</a>
-          </li>
-        ))}
-      </ul>
+      {researchIsBrewing ? (
+        <p class="empty-state">Science is brewing right now—more coming soon.</p>
+      ) : (
+        <ul>
+          {latestResearch.map((item) => (
+            <li>
+              <a href={item.link}>{item.title}</a>
+            </li>
+          ))}
+        </ul>
+      )}
     </div>
 
     <div class="marker-card marker-pink">
       <h2>📝 Latest Posts</h2>
-      <ul>
-        {latestPosts.map((post) => (
-          <li>
-            <a href={post.link}>{post.title}</a>
-          </li>
-        ))}
-      </ul>
+      {latestPosts.length ? (
+        <ul>
+          {latestPosts.map((post) => (
+            <li>
+              <a href={post.link}>{post.title}</a>
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <p class="empty-state">No musings yet, but words are on their way.</p>
+      )}
     </div>
   </section>
 </Layout>

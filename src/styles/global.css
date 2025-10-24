@@ -620,6 +620,13 @@ h3 {
   margin-top: 1.1rem;
 }
 
+.empty-state {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--ink-muted);
+  font-style: italic;
+}
+
 @media (max-width: 640px) {
   .publication-entry {
     grid-template-columns: 1fr;
